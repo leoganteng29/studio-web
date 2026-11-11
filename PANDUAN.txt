@@ -1,0 +1,21 @@
+USERBOT STUDIO - MINI APP TELEGRAM
+===================================
+Isi folder:  index.html (tampilan)  |  commands.json (daftar command)  |  gen-commands.js (pembuat commands.json)
+
+1) HOSTING (wajib HTTPS). Pilih salah satu, semuanya gratis:
+   a. Netlify Drop : buka https://app.netlify.com/drop lalu seret folder ini -> dapat URL https://xxxx.netlify.app
+   b. GitHub Pages : upload index.html + commands.json ke repo, Settings > Pages > Deploy from branch
+   c. Vercel / Cloudflare Pages : upload folder ini.
+   Buka URL-nya di browser; jika tampil kartu gelap bertab, berarti benar.
+
+2) PASANG DI BOTFATHER (bot yang sama dengan bot_token di config.json)
+   a. Tombol menu di samping kolom ketik:
+        /setmenubutton -> pilih bot -> kirim URL -> kirim judul tombol, mis. "Studio"
+   b. (opsional) Mini App yang bisa dibuka lewat link t.me/NamaBot/studio:
+        /newapp -> pilih bot -> judul -> deskripsi -> foto 640x360 -> kirim URL -> short name "studio"
+   c. Tombol di /start bot: isi config.json  "webapp_url": "https://xxxx.netlify.app"  lalu restart ubot.
+
+3) UPDATE DAFTAR COMMAND (jika menambah plugin)
+   node gen-commands.js <folder ubot> commands.json   lalu upload ulang commands.json.
+
+4) UBAH TEMA/TEKS: bagian CONFIG di atas <script> pada index.html (brand, prefix, channelUrl).
